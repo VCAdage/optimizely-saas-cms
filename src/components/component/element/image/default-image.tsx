@@ -9,14 +9,14 @@ import Image from '@/components/shared/cms_image'
 import { ImageComponent, DefaultImageLayoutProps } from './types'
 
 export const ImageElement : ImageComponent<ImageElementDataFragment, DefaultImageLayoutProps> = ({ data: { altText, imageLink }, layoutProps, ...props }) => {
-    const { 
-        roundedCorners="none", 
-        appear="none", 
-        delay="none", 
-        duration="none", 
-        direction="ltr", 
-        aspectRatio = "square", 
-        orientation="landscape" 
+    const {
+        roundedCorners="none",
+        appear="none",
+        delay="none",
+        duration="none",
+        direction="ltr",
+        aspectRatio = "square",
+        orientation="landscape"
     } = extractSettings(layoutProps)
 
     const useFadeIn = appear != 'none' && duration != 'none'
@@ -55,7 +55,7 @@ export const ImageElement : ImageComponent<ImageElementDataFragment, DefaultImag
             cssClasses.push('rounded-lg')
             break;
         case 'huge':
-            cssClasses.push('rounded-[40px]')
+            cssClasses.push('rounded-[5px]')
             break;
         case 'full':
             cssClasses.push('rounded-full')
@@ -68,7 +68,7 @@ export const ImageElement : ImageComponent<ImageElementDataFragment, DefaultImag
     if (useFadeIn) {
         let fadeInDuration : number = 0
         let fadeInDelay : number = 0
-    
+
         switch (duration) {
             case 'short':
                 fadeInDuration = 0.5
@@ -83,7 +83,7 @@ export const ImageElement : ImageComponent<ImageElementDataFragment, DefaultImag
                 fadeInDuration = 2
                 break
         }
-    
+
         switch (delay) {
             case 'short':
                 fadeInDelay = 0.5
@@ -102,7 +102,7 @@ export const ImageElement : ImageComponent<ImageElementDataFragment, DefaultImag
         const initialClip = direction == 'rtl' ? "circle(0% at 100%)" : "circle(0% at 0%)"
         const targetClip = direction == 'rtl' ? "circle(120% at 100%)" : "circle(120% at 0%)"
 
-        return <Animation 
+        return <Animation
             className={ cssClasses.join(' ')}
             initial={{ opacity: 0, clipPath: initialClip }}
             animate={{ opacity: 1, clipPath: targetClip }}

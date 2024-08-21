@@ -42,13 +42,13 @@ const ContentDirections = {
 const CornerOptions = {
     none: "",
     small: "rounded-[20px] before:rounded-[20px]",
-    large: "rounded-[40px] before:rounded-[40px]"
+    large: "rounded-[5px] before:rounded-[5px]"
 }
 
 const InnerCornerOptions : { [key in keyof typeof CornerOptions]: string} = {
     none: "",
     small: "rounded-[20px]",
-    large: "rounded-[40px]"
+    large: "rounded-[5px]"
 }
 
 export type ColorOptions = keyof typeof OuterColors
@@ -56,15 +56,15 @@ export type DirectionOptions = keyof typeof ContentDirections
 export type CornerOptions = keyof typeof CornerOptions
 
 export const Card = <E extends AllowedElements>({
-    as: htmlElement, 
-    cardColor = "white", 
-    children, 
+    as: htmlElement,
+    cardColor = "white",
+    children,
     className = "",
     innerClassName = "",
     direction = "none",
     roundedCorners = "large",
     withHoverEffect: withHover = false,
-    ...props 
+    ...props
 }: CardProps<E>) => {
     const outerClasses : string = OuterColors[cardColor] + (withHover ? " before:content-[''] before:absolute before:top-[1px] before:left-[1px] before:w-[calc(100%-2px)] before:h-[calc(100%-2px)] before:z-[-1] before:bg-azure before:transition-transform before:ease-in-out before:duration-300 hover:before:translate-x-8 hover:before:translate-y-8 focus:before:translate-x-8 focus:before:translate-y-8" : '');
     const innerClasses : string = InnerColors[cardColor] + ""
