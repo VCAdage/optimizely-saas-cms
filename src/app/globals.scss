@@ -8,6 +8,10 @@
   --adage-paletteadage-light-blue-1: rgba(220, 239, 255, 1);
   --adage-paletteadage-light-blue-2: rgba(183, 220, 251, 1);
   --adage-paletteadage-light-grey: rgba(218, 223, 235, 1);
+  --alert-palettealert-caution: rgba(255, 247, 220, 1);
+  --alert-palettealert-general: rgba(220, 239, 255, 1);
+  --alert-palettealert-good: rgba(204, 255, 221, 1);
+  --alert-palettealert-negative: rgba(255, 220, 220, 1);
   --black: rgba(19, 11, 45, 1);
   --cta-desktop-font-family: "Area Normal", Helvetica;
   --cta-desktop-font-size: 18px;
@@ -45,6 +49,18 @@
   --h4-mobile-font-weight: 600;
   --h4-mobile-letter-spacing: 0px;
   --h4-mobile-line-height: 32px;
+  --h6-desktop-font-family: "Area Normal", Helvetica;
+  --h6-desktop-font-size: 20px;
+  --h6-desktop-font-style: normal;
+  --h6-desktop-font-weight: 600;
+  --h6-desktop-letter-spacing: 0px;
+  --h6-desktop-line-height: 26px;
+  --p-small-desktop-font-family: "Area Normal", Helvetica;
+  --p-small-desktop-font-size: 14px;
+  --p-small-desktop-font-style: normal;
+  --p-small-desktop-font-weight: 600;
+  --p-small-desktop-letter-spacing: 0px;
+  --p-small-desktop-line-height: 20px;
   --p-desktop-bold-font-family: "Area Normal", Helvetica;
   --p-desktop-bold-font-size: 16px;
   --p-desktop-bold-font-style: normal;
@@ -70,6 +86,7 @@
   --p-mobile-letter-spacing: 0px;
   --p-mobile-line-height: 18px;
   --ui-palettebackground: rgba(255, 255, 255, 1);
+  --ui-paletteicon: rgba(19, 11, 45, 0.96);
   --ui-paletteborder: rgba(19, 11, 45, 0.96);
   --ui-paletteborder-active: rgba(19, 11, 45, 0.72);
   --ui-palettetext-primary: rgba(19, 11, 45, 0.96);
