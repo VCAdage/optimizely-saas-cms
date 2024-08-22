@@ -8,7 +8,17 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      'white': '#ffffff',
+      "adage-paletteadage-black": "var(--adage-paletteadage-black)",
+      "adage-paletteadage-dark-grey": "var(--adage-paletteadage-dark-grey)",
+      "adage-paletteadage-light-blue-1": "var(--adage-paletteadage-light-blue-1)",
+      "adage-paletteadage-light-blue-2": "var(--adage-paletteadage-light-blue-2)",
+      "adage-paletteadage-light-grey": "var(--adage-paletteadage-light-grey)",
+      black: "var(--black)",
+      "ui-palettebackground": "var(--ui-palettebackground)",
+      "ui-paletteborder": "var(--ui-paletteborder)",
+      "ui-paletteborder-active": "var(--ui-paletteborder-active)",
+      "ui-palettetext-primary": "var(--ui-palettetext-primary)",
+      white: "var(--white)",
       'ghost-white': '#F8F8FC',
       'light-grey': '#D9D9D9',
       'azure': '#007EFC',
@@ -24,6 +34,18 @@ const config: Config = {
       'currentColor': 'currentColor',
       'transparent': 'transparent',
       'inherit': 'inherit'
+    },
+    fontFamily: {
+      "cta-desktop": "var(--cta-desktop-font-family)",
+      "cta-mobile": "var(--cta-mobile-font-family)",
+      "h2-desktop": "var(--h2-desktop-font-family)",
+      "h2-mobile": "var(--h2-mobile-font-family)",
+      "h4-desktop": "var(--h4-desktop-font-family)",
+      "h4-mobile": "var(--h4-mobile-font-family)",
+      "p-desktop": "var(--p-desktop-font-family)",
+      "p-desktop-bold": "var(--p-desktop-bold-font-family)",
+      "p-mobile": "var(--p-mobile-font-family)",
+      "p-mobile-bold": "var(--p-mobile-bold-font-family)",
     },
     extend: {
       typography: {
