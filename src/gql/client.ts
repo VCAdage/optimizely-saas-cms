@@ -47,6 +47,12 @@ export const ArticleListElementDataFragmentDoc = /*#__PURE__*/ gql`
   articleListCount
 }
     `;
+export const AlertElementDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment AlertElementData on AlertElement {
+  AlertDescription
+  AlertTitle
+}
+    `;
 export const CTAElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTAElementData on CTAElement {
   text: Text
@@ -100,6 +106,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ElementData on _IElement {
   ...IElementData
   ...ArticleListElementData
+  ...AlertElementData
   ...CTAElementData
   ...HeadingElementData
   ...ImageElementData
@@ -327,6 +334,7 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
+${AlertElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
@@ -356,6 +364,7 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
+${AlertElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
