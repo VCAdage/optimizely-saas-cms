@@ -38,6 +38,8 @@ const documents = {
     "query getArticleGroupPageItems($key: String!, $locale: [Locales], $pageSize: Int, $skip: Int) {\n  group: ArticleGroupPage(where: {_metadata: {key: {eq: $key}}}, locale: $locale) {\n    data: items {\n      children: _link(type: ITEMS) {\n        listing: ArticlePage(\n          limit: $pageSize\n          locale: $locale\n          skip: $skip\n          where: {_metadata: {status: {eq: \"Published\"}}}\n        ) {\n          total\n          items {\n            ...IContentData\n            _metadata {\n              published\n            }\n            articleHeroImage {\n              ...ReferenceData\n            }\n            articleTitle\n            articleSummary {\n              json\n            }\n          }\n        }\n      }\n    }\n  }\n}": types.getArticleGroupPageItemsDocument,
     "query getArticlePageMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getArticlePageMetaDataDocument,
     "fragment ArticlePageData on ArticlePage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleAuthors\n  articleTitle\n  articleBody {\n    json\n  }\n}": types.ArticlePageDataFragmentDoc,
+    "query getLandingPageMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getLandingPageMetaDataDocument,
+    "fragment LandingPageData on LandingPage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleTitle\n  articleBody {\n    json\n  }\n}": types.LandingPageDataFragmentDoc,
     "fragment ButtonBlockData on ButtonBlock {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockDataFragmentDoc,
     "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockPropertyDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  text: Text\n  link: Link {\n    ...LinkData\n  }\n}": types.CTAElementDataFragmentDoc,
@@ -166,6 +168,14 @@ export function gql(source: "query getArticlePageMetaData($key: String!, $versio
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ArticlePageData on ArticlePage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleAuthors\n  articleTitle\n  articleBody {\n    json\n  }\n}"): (typeof documents)["fragment ArticlePageData on ArticlePage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleAuthors\n  articleTitle\n  articleBody {\n    json\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query getLandingPageMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}"): (typeof documents)["query getLandingPageMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment LandingPageData on LandingPage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleTitle\n  articleBody {\n    json\n  }\n}"): (typeof documents)["fragment LandingPageData on LandingPage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleTitle\n  articleBody {\n    json\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

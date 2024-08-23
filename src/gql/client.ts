@@ -264,12 +264,27 @@ export const ArticlePageDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const LandingPageDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment LandingPageData on LandingPage {
+  metadata: _metadata {
+    published
+  }
+  articleHeroImage {
+    ...ReferenceData
+  }
+  articleTitle
+  articleBody {
+    json
+  }
+}
+    `;
 export const PageDataFragmentDoc = /*#__PURE__*/ gql`
     fragment PageData on _IContent {
   ...IContentData
   ...BlankExperienceData
   ...ArticleGroupPageData
   ...ArticlePageData
+  ...LandingPageData
 }
     `;
 export const MenuContentFragmentDoc = /*#__PURE__*/ gql`
@@ -333,7 +348,8 @@ ${ImageElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${LandingPageDataFragmentDoc}`;
 export const getContentByPathDocument = /*#__PURE__*/ gql`
     query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {
   content: _Content(
@@ -371,7 +387,8 @@ ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${LandingPageDataFragmentDoc}`;
 export const getArticleListElementItemsDocument = /*#__PURE__*/ gql`
     query getArticleListElementItems($count: Int, $locale: [Locales]) {
   ArticlePage(
@@ -452,6 +469,20 @@ ${LinkDataFragmentDoc}
 ${ReferenceDataFragmentDoc}`;
 export const getArticlePageMetaDataDocument = /*#__PURE__*/ gql`
     query getArticlePageMetaData($key: String!, $version: String) {
+  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {
+    items {
+      _metadata {
+        displayName
+      }
+      SeoSettings {
+        metaTitle
+      }
+    }
+  }
+}
+    `;
+export const getLandingPageMetaDataDocument = /*#__PURE__*/ gql`
+    query getLandingPageMetaData($key: String!, $version: String) {
   BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {
     items {
       _metadata {
@@ -572,6 +603,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     getArticlePageMetaData(variables: Schema.getArticlePageMetaDataQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.getArticlePageMetaDataQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Schema.getArticlePageMetaDataQuery>(getArticlePageMetaDataDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getArticlePageMetaData', 'query', variables);
+    },
+    getLandingPageMetaData(variables: Schema.getLandingPageMetaDataQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.getLandingPageMetaDataQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<Schema.getLandingPageMetaDataQuery>(getLandingPageMetaDataDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getLandingPageMetaData', 'query', variables);
     },
     getFooter(variables?: Schema.getFooterQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.getFooterQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Schema.getFooterQuery>(getFooterDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getFooter', 'query', variables);

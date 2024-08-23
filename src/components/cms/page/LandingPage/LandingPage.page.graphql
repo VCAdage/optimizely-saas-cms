@@ -1,0 +1,12 @@
+fragment LandingPageData on LandingPage {
+  metadata: _metadata {
+    published
+  }
+  articleHeroImage {
+    ...ReferenceData
+  }
+  articleTitle
+  articleBody {
+    json
+  }
+}
