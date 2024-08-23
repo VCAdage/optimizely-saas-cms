@@ -1,6 +1,6 @@
 
 import { OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
-import { SearchPageDataFragment } from "@/gql/graphql";
+import { SearchPageDataFragment, SearchPageDataFragmentDoc } from "@/gql/graphql";
 import SearchBar from '@/components/SearchBar';
 import { searchArticles } from "./api";
 
@@ -14,5 +14,7 @@ export const SearchPagePage: CmsComponent<SearchPageDataFragment> = ({ data, con
     </div>
   );
 };
+SearchPagePage.getDataFragment = () => ['SearchPageData', SearchPageDataFragmentDoc]
+
 
 export default SearchPagePage;

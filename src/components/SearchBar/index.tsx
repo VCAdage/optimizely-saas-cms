@@ -46,7 +46,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ doSearch }) => {
         {searchResults && searchResults.map((result) => (
           <li key={result.key} style={{border: '1px solid black', marginBottom: '10px', padding: '10px'}}>
             <h2 style={{fontSize:'24px', fontWeight: '700'}}>{result.title}</h2>
-            <div dangerouslySetInnerHTML={{__html: result.intro}} />
+            {result && result.intro && <div dangerouslySetInnerHTML={{__html: result.intro.toString()}} />}
           </li>
         ))}
       </ul>
