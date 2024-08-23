@@ -1,6 +1,6 @@
 // components/SearchBar.tsx
 'use client';
-import React, {dangerouslySetInnerHTML, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { searchArticles } from '../cms/page/SearchPage/api';
 import { ArticleList, ArticleListItem } from '../cms/page/ArticleGroupPage/api';
 import { getSummary } from '@/openaiQuery';
