@@ -484,6 +484,7 @@ export const searchArticlesDocument = /*#__PURE__*/ gql`
     limit: $pageSize
     skip: $skip
     where: {_fulltext: {match: $searchTerm}}
+    orderBy: {_ranking: SEMANTIC}
   ) {
     total
     items {
