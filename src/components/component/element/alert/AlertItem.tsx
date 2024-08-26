@@ -2,32 +2,21 @@ import { gql, type Schema } from "@/gql";
 import { type CmsComponent } from "@remkoj/optimizely-cms-react";
 import { getServerContext, getFactory } from "@remkoj/optimizely-cms-react/rsc";
 import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
-
-import { IconClose } from "../../../shared/icons/IconClose";
 import { IconError } from "../../../shared/icons/IconError";
 
 interface Props {
-  data: any;
-  contentLink: string;
-  inEditMode: boolean;
-  size: string;
   className: string;
   AlertTitle: string;
   AlertDescription: string;
 }
 
-export const AlertItem: CmsComponent<Schema.AlertElementDataFragment> = ({
-  data,
-  contentLink,
-  inEditMode,
-  size,
+export const AlertItem = ({
   className,
   AlertTitle,
   AlertDescription,
 }: Props) => {
-  const { factory } = getServerContext();
   return (
-    <CmsEditable className={`flex items-start justify-end gap-2 px-28 py-4 relative bg-alert-palettealert-general rounded-lg overflow-hidden ${className}`}>
+    <div className={`flex items-start justify-end gap-2 px-28 py-4 relative bg-alert-palettealert-general rounded-lg overflow-hidden ${className}`}>
       <div className="flex items-center justify-end gap-[22px] relative flex-1 grow">
         <IconError className="!h-[26px] !w-[26px] !relative" />
 
@@ -49,7 +38,7 @@ export const AlertItem: CmsComponent<Schema.AlertElementDataFragment> = ({
                 <IconClose className="!h-[16px] !w-[16px] !relative" />
             </div>
         </button> */}
-    </CmsEditable>
+    </div>
   );
 };
 
