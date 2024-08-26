@@ -1,7 +1,3 @@
-import { gql, type Schema } from "@/gql";
-import { type CmsComponent } from "@remkoj/optimizely-cms-react";
-import { getServerContext, getFactory } from "@remkoj/optimizely-cms-react/rsc";
-import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import { IconError } from "../../../shared/icons/IconError";
 
 interface Props {

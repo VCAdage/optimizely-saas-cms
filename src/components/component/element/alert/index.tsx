@@ -1,5 +1,5 @@
 import { gql, type Schema } from "@/gql";
-import { type CmsComponent, CmsComponentProps } from "@remkoj/optimizely-cms-react"; // Import CmsComponentProps
+import { type CmsComponent } from "@remkoj/optimizely-cms-react"; // Import CmsComponentProps
 
 import { getServerContext, getFactory } from "@remkoj/optimizely-cms-react/rsc";
 import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
