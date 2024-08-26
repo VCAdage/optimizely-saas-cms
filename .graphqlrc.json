@@ -1,0 +1,4 @@
+{
+    "schema": "https://cg.optimizely.com/content/v2?auth=bhcDr3mojIPJWeHYgaeaYILAXsoPvPbaQSSkklNqvDTvGeWu",
+    "documents": "src/**/*.graphql"
+  }
