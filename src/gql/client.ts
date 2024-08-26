@@ -498,6 +498,9 @@ export const searchArticlesDocument = /*#__PURE__*/ gql`
       articleSummary {
         html
       }
+      articleBody {
+        html
+      }
     }
   }
 }

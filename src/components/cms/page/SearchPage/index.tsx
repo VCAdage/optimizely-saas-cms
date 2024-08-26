@@ -1,7 +1,7 @@
 
 import { OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
 import { SearchPageDataFragment, SearchPageDataFragmentDoc } from "@/gql/graphql";
-import SearchBar from '@/components/SearchBar';
+import SearchContainer from '@/components/SearchContainer';
 import { searchArticles } from "./api";
 
 export const SearchPagePage: CmsComponent<SearchPageDataFragment> = ({ data, contentLink }) => {
@@ -9,8 +9,7 @@ export const SearchPagePage: CmsComponent<SearchPageDataFragment> = ({ data, con
 
   return (
     <div style={{padding: '20px'}}>
-      <h1>Search Page</h1>
-      <SearchBar  doSearch={searchArticles}/>
+      <SearchContainer  doSearch={searchArticles}/>
     </div>
   );
 };
