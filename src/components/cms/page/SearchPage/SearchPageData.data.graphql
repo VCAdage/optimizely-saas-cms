@@ -22,6 +22,9 @@ query searchArticles(
     articleSummary {
         html
     }
+    articleBody {
+        html
+    }
     }
   }
 }

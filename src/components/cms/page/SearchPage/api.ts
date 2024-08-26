@@ -15,6 +15,7 @@ export async function searchArticles(searchTerm: string = '', pageSize: number =
             title: article.articleTitle || '',
             image: article.articleHeroImage || undefined,
             intro: article.articleSummary?.html || undefined,
+            body: article.articleBody?.html || undefined,
             published: article._metadata?.published ? new Date(article._metadata?.published) : new Date()
         };
     }).filter(isNotNullOrUndefined);
