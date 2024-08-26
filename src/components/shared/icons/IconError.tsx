@@ -5,5 +5,6 @@ interface Props {
 }
 
 export const IconError = ({ className }: Props): JSX.Element => {
-  return <div className={`w-px h-px ${className}`} />;
+  // icon SVG is located in layout.tsx file
+  return <svg className={`w-px h-px icon icon-notification ${className}`}><use xlinkHref="#icon-notification"></use></svg>;
 };

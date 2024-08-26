@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --adage-paletteadage-black: rgba(19, 11, 45, 1);
+  --adage-paletteadage-light-blue-1: rgba(220, 239, 255, 1);
+  --adage-paletteadage-light-grey: rgba(218, 223, 235, 1);
+  --alert-palettealert-caution: rgba(255, 247, 220, 1);
+  --alert-palettealert-general: rgba(220, 239, 255, 1);
+  --alert-palettealert-good: rgba(204, 255, 221, 1);
+  --alert-palettealert-negative: rgba(255, 220, 220, 1);
+  --black: rgba(19, 11, 45, 1);
+  --cta-desktop-font-family: "Area Normal", Helvetica;
+  --cta-desktop-font-size: 18px;
+  --cta-desktop-font-style: normal;
+  --cta-desktop-font-weight: 800;
+  --cta-desktop-letter-spacing: 0px;
+  --cta-desktop-line-height: 18px;
+  --h6-desktop-font-family: "Area Normal", Helvetica;
+  --h6-desktop-font-size: 20px;
+  --h6-desktop-font-style: normal;
+  --h6-desktop-font-weight: 600;
+  --h6-desktop-letter-spacing: 0px;
+  --h6-desktop-line-height: 26px;
+  --p-small-desktop-font-family: "Area Normal", Helvetica;
+  --p-small-desktop-font-size: 14px;
+  --p-small-desktop-font-style: normal;
+  --p-small-desktop-font-weight: 600;
+  --p-small-desktop-letter-spacing: 0px;
+  --p-small-desktop-line-height: 20px;
+  --ui-palettebackground: rgba(255, 255, 255, 1);
+  --ui-paletteicon: rgba(19, 11, 45, 0.96);
+  --ui-palettetext-primary: rgba(19, 11, 45, 0.96);
+  --white: rgba(255, 255, 255, 1);
+}
+
 @layer utilities {
     .outer-padding {
       @apply lg:px-32 md:px-16 px-8;
@@ -13,76 +46,76 @@
       }
     }
   }
-  
+
   @layer components {
     // Buttons
     .btn {
       @apply inline-block relative no-underline whitespace-nowrap;
     }
-  
+
     .btn-before {
       @apply before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-azure before:rounded-[40px] before:transition-all before:duration-300 before:ease-in-out;
     }
-  
+
     .btn-before--hover {
       @apply hover:before:translate-x-[0px] hover:before:translate-y-[8px];
     }
-  
+
     .btn--primary,
     .btn--secondary {
       @apply btn;
     }
-  
+
     .btn--default {
       @apply btn-before btn-before--hover active:translate-y-[4px] active:before:translate-y-0 transition-transform duration-300 ease-in-out;
     }
-  
+
     .btn--cta {
       @apply btn-before before:translate-x-[8px] before:translate-y-[8px] hover:before:translate-x-[0px] hover:before:translate-y-[0px];
     }
-  
+
     .btn--cta .btn__content {
       @apply transition-all duration-300 ease-in-out hover:translate-y-[-8px] active:translate-y-0;
     }
-  
+
     .btn__content {
       @apply font-semibold px-[16px] py-[10px] rounded-[40px] border-vulcan border-2 relative;
     }
-  
+
     .btn--primary .btn__content {
       @apply text-white bg-vulcan dark:text-vulcan dark:bg-ghost-white dark:border-ghost-white z-10;
     }
-  
+
     .btn--secondary .btn__content {
       @apply text-vulcan bg-white;
     }
-  
+
     .btn--light {
       @apply before:bg-white;
     }
-  
+
     .btn--light .btn__content {
       @apply text-white z-10 border-white;
-  
+
       background-color: var(--bg-inherit-button);
     }
-  
+
     .btn--dark {
       @apply before:bg-vulcan;
     }
-  
+
     .btn--dark .btn__content {
       @apply text-vulcan z-10 border-vulcan;
-  
+
       background-color: var(--bg-inherit-button);
     }
     // End Buttons
-  
+
     // Typography Styles
     .eyebrow {
       @apply uppercase text-xl tracking-[1px];
     }
-  
+
     // Share BG vars down to buttons.
     .bg-ghost-white {
       --bg-inherit-button: var(--ghost-white);
@@ -102,17 +135,26 @@
     .bg-verdansk {
       --bg-inherit-button: var(--verdansk);
     }
-  
+
     // Link arrow style
     .link--arrow {
       @apply relative inline-flex items-center after:translate-x-[6px] after:inline-block after:w-[6px] after:h-[24px] no-underline hover:underline hover:after:translate-x-[16px] after:transition-all after:duration-300 after:ease-in-out;
-  
+
       &:after {
         content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="7" height="13" viewBox="0 0 7 13" fill="none"><path d="M1 12.3711C1 9.05664 3.67767 6.37109 6.97866 6.37109H7M7 6.36619C3.68555 6.36619 1 3.69075 1 0.392454V0.371094" stroke="%2310141D" stroke-width="1.5"/></svg>') !important;
       }
     }
   }
-  
+
 .optly-contentLink {
   display: none
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }

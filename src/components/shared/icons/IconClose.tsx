@@ -5,5 +5,6 @@ interface Props {
 }
 
 export const IconClose = ({ className }: Props): JSX.Element => {
-  return <div className={`w-px h-px ${className}`} />;
+  // icon SVG is located in layout.tsx file
+  return <svg className={`w-px h-px icon icon-cross ${className}`}><use xlinkHref="#icon-cross"></use></svg>;
 };
