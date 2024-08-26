@@ -271,12 +271,24 @@ export const ArticlePageDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const SearchPageDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment SearchPageData on SearchPage {
+  metadata: _metadata {
+    published
+  }
+  Image {
+    ...ReferenceData
+  }
+  Title
+}
+    `;
 export const PageDataFragmentDoc = /*#__PURE__*/ gql`
     fragment PageData on _IContent {
   ...IContentData
   ...BlankExperienceData
   ...ArticleGroupPageData
   ...ArticlePageData
+  ...SearchPageData
 }
     `;
 export const MenuContentFragmentDoc = /*#__PURE__*/ gql`
@@ -341,7 +353,8 @@ ${ImageElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${SearchPageDataFragmentDoc}`;
 export const getContentByPathDocument = /*#__PURE__*/ gql`
     query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {
   content: _Content(
@@ -380,7 +393,8 @@ ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${SearchPageDataFragmentDoc}`;
 export const getArticleListElementItemsDocument = /*#__PURE__*/ gql`
     query getArticleListElementItems($count: Int, $locale: [Locales]) {
   ArticlePage(
@@ -473,6 +487,37 @@ export const getArticlePageMetaDataDocument = /*#__PURE__*/ gql`
   }
 }
     `;
+export const searchArticlesDocument = /*#__PURE__*/ gql`
+    query searchArticles($pageSize: Int, $skip: Int, $searchTerm: String) {
+  ArticlePage(
+    limit: $pageSize
+    skip: $skip
+    where: {_fulltext: {match: $searchTerm}}
+    orderBy: {_ranking: SEMANTIC}
+  ) {
+    total
+    items {
+      ...IContentData
+      _metadata {
+        published
+      }
+      articleHeroImage {
+        ...ReferenceData
+      }
+      articleTitle
+      articleSummary {
+        html
+      }
+      articleBody {
+        html
+      }
+    }
+  }
+}
+    ${IContentDataFragmentDoc}
+${IContentInfoFragmentDoc}
+${LinkDataFragmentDoc}
+${ReferenceDataFragmentDoc}`;
 export const getFooterDocument = /*#__PURE__*/ gql`
     query getFooter {
   footer: WebsiteFooter(where: {_metadata: {status: {eq: "Published"}}}) {
@@ -581,6 +626,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     getArticlePageMetaData(variables: Schema.getArticlePageMetaDataQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.getArticlePageMetaDataQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Schema.getArticlePageMetaDataQuery>(getArticlePageMetaDataDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getArticlePageMetaData', 'query', variables);
+    },
+    searchArticles(variables?: Schema.searchArticlesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.searchArticlesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<Schema.searchArticlesQuery>(searchArticlesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'searchArticles', 'query', variables);
     },
     getFooter(variables?: Schema.getFooterQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Schema.getFooterQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Schema.getFooterQuery>(getFooterDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getFooter', 'query', variables);

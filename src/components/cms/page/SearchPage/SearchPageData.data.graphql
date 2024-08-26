@@ -1,0 +1,33 @@
+query searchArticles(
+    $pageSize: Int
+    $skip: Int
+    $searchTerm: String) {
+  ArticlePage (
+    limit: $pageSize
+    skip: $skip
+    where: { _fulltext:  {
+       match: $searchTerm
+    }}
+    orderBy:  {
+       _ranking: SEMANTIC
+    }
+) {
+    total
+    items {
+    ...IContentData
+    _metadata {
+        published
+    }
+    articleHeroImage {
+        ...ReferenceData
+    }
+    articleTitle
+    articleSummary {
+        html
+    }
+    articleBody {
+        html
+    }
+    }
+  }
+}

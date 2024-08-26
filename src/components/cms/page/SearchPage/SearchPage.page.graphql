@@ -1,0 +1,9 @@
+fragment SearchPageData on SearchPage {
+  metadata: _metadata {
+	  published
+  }
+  Image {
+    ...ReferenceData
+  }
+  Title
+}
