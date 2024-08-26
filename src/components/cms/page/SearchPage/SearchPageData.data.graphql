@@ -7,7 +7,10 @@ query searchArticles(
     skip: $skip
     where: { _fulltext:  {
        match: $searchTerm
-    } }
+    }}
+    orderBy:  {
+       _ranking: SEMANTIC
+    }
 ) {
     total
     items {

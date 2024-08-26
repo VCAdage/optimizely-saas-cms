@@ -37,7 +37,7 @@ const SearchContainer: React.FC<SearchBarProps> = ({ doSearch }) => {
       setSummary('');
       return;
     }
-    var topResults = searchResults.slice(0, 5);
+    var topResults = searchResults.slice(0, 3);
     getSummary(topResults.map((result) => result.body?.toString() as string)).then((summary) => {
       setSummary(summary);
     });
