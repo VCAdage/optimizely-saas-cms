@@ -1,6 +1,6 @@
 // components/SearchBar.tsx
 'use client';
-import React, {useEffect} from 'react';
+import React, {use, useEffect} from 'react';
 import { searchArticles } from '../cms/page/SearchPage/api';
 import { ArticleList, ArticleListItem } from '../cms/page/ArticleGroupPage/api';
 import { getSummary } from '@/openaiQuery';
@@ -20,13 +20,23 @@ const SearchContainer: React.FC<SearchBarProps> = ({ doSearch }) => {
     setSearchTerm(event.target.value);
   };
 
+  const hasResults = searchResults && searchResults.length > 0;
+
   const handleSearch = () => {
     var results = doSearch(searchTerm).then((results) => {
     setSearchResults(results.items);
   })};
 
   useEffect(() => {
-    if (!searchResults) return;
+    handleSearch();
+  },
+  []);
+
+  useEffect(() => {
+    if (!hasResults) {
+      setSummary('');
+      return;
+    }
     var topResults = searchResults.slice(0, 5);
     getSummary(topResults.map((result) => result.body?.toString() as string)).then((summary) => {
       setSummary(summary);
@@ -43,7 +53,7 @@ const SearchContainer: React.FC<SearchBarProps> = ({ doSearch }) => {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
-      {searchResults && !summary && 
+      {hasResults && !summary && 
         <div className='mt-10 mb-10'>
           <p>Generating AI Summary</p>
           <div className="animate-spin inline-block size-12 border-[6px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500" role="status" aria-label="loading">
@@ -53,7 +63,7 @@ const SearchContainer: React.FC<SearchBarProps> = ({ doSearch }) => {
         
       {summary && <div className='mt-10 mb-10' dangerouslySetInnerHTML={{__html: summary}} />}
       <ul>
-        {searchResults && searchResults.map((result) => (
+        {hasResults && searchResults.map((result) => (
           <li className='rounded-lg shadow-md mb-10 p-10 ' key={result.key} style={{backgroundColor: 'rgb(238 240 245)'}}>
             <h2 style={{fontSize:'24px', fontWeight: '700'}}><a href={result.link?.default ?? ''} >{result.title}</a></h2>
             <div className='flex space-x-2'>
@@ -66,7 +76,7 @@ const SearchContainer: React.FC<SearchBarProps> = ({ doSearch }) => {
             </div>
             
           </li>
-        ))}
+        )) || <li>No results to show</li>}
       </ul>
     </div>
   );
