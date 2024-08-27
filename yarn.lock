@@ -110,14 +110,14 @@ __metadata:
   linkType: hard
 
 "@babel/generator@npm:^7.14.0, @babel/generator@npm:^7.18.13, @babel/generator@npm:^7.25.0, @babel/generator@npm:^7.25.4":
-  version: 7.25.4
-  resolution: "@babel/generator@npm:7.25.4"
+  version: 7.25.5
+  resolution: "@babel/generator@npm:7.25.5"
   dependencies:
     "@babel/types": "npm:^7.25.4"
     "@jridgewell/gen-mapping": "npm:^0.3.5"
     "@jridgewell/trace-mapping": "npm:^0.3.25"
     jsesc: "npm:^2.5.1"
-  checksum: 10/35b05e1f230649469c64971e034b5101079c37d23f8cc658323f1209e39daf58d29ec4ce6de1d6d31dacddd39ffbf6b7e9a2b124d4f6b360a5f7046ae10fbaf4
+  checksum: 10/e6d046afe739cfa706c40c127b7436731acb2a3146d408a7d89dbf16448491b35bc09b7d285cc19c2c1f8980d74b5a99df200d67c859bb5260986614685b0770
   languageName: node
   linkType: hard
 
@@ -1567,8 +1567,8 @@ __metadata:
   linkType: hard
 
 "@headlessui/react@npm:^2.0.4":
-  version: 2.1.2
-  resolution: "@headlessui/react@npm:2.1.2"
+  version: 2.1.3
+  resolution: "@headlessui/react@npm:2.1.3"
   dependencies:
     "@floating-ui/react": "npm:^0.26.16"
     "@react-aria/focus": "npm:^3.17.1"
@@ -1577,7 +1577,7 @@ __metadata:
   peerDependencies:
     react: ^18
     react-dom: ^18
-  checksum: 10/b3f4f370dc16c1164022ee66b0acf0ae66f6a5ae00cfcf4616559d717765f7e41fe2b3a3f48c1fe5b7a262d4985b6182d766e4f52eec2685d9696d9f38e5642d
+  checksum: 10/8cb723ef690fd1fb42c3ec8872071881c6c856d7ca31c75f53bde32f4a314a3dd8186defca786bc089fce50e2b8cbd4390dd5b3971273c5c4515064199befca8
   languageName: node
   linkType: hard
 
@@ -2598,21 +2598,21 @@ __metadata:
   linkType: hard
 
 "@tanstack/react-virtual@npm:^3.8.1":
-  version: 3.10.2
-  resolution: "@tanstack/react-virtual@npm:3.10.2"
+  version: 3.10.4
+  resolution: "@tanstack/react-virtual@npm:3.10.4"
   dependencies:
-    "@tanstack/virtual-core": "npm:3.10.2"
+    "@tanstack/virtual-core": "npm:3.10.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/4fd3aa500625ec620de00937b6f843f0c8dcb665cb1fcf49d1f6796c8a0c1fd411465f4d2f7a1050f7cc0b44fe3cfd5ccb13332087ba23c61cf73ededa99e3e5
+  checksum: 10/04b6159a09b5f69567849ad4150766ac71ef99243380214b411d0ab77e3a4dc2d16ec4ec231cee4ba8e2096ebe7e4ad26afb34ed21e4203947d787deda66ab53
   languageName: node
   linkType: hard
 
-"@tanstack/virtual-core@npm:3.10.2":
-  version: 3.10.2
-  resolution: "@tanstack/virtual-core@npm:3.10.2"
-  checksum: 10/1bcdd50aa03d00bee51ae89041e684ebae79d6ccb12eb137d02d5ac5e9c176f8953a511a4309cffcdc5eac4c39eba78cffe0b1f72c68f0992c9d50240443b96b
+"@tanstack/virtual-core@npm:3.10.4":
+  version: 3.10.4
+  resolution: "@tanstack/virtual-core@npm:3.10.4"
+  checksum: 10/7d624a3480ff546baf435048d07395a494d748cf8b9db5b5f75029d2424a2f47c63165f37b309823679fe14650b631c683beadd25dfb2cb3734495397c69f8fc
   languageName: node
   linkType: hard
 
@@ -3721,13 +3721,13 @@ __metadata:
   linkType: hard
 
 "axios@npm:^1.7.4":
-  version: 1.7.4
-  resolution: "axios@npm:1.7.4"
+  version: 1.7.5
+  resolution: "axios@npm:1.7.5"
   dependencies:
     follow-redirects: "npm:^1.15.6"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 10/7a1429be1e3d0c2e1b96d4bba4d113efbfabc7c724bed107beb535c782c7bea447ff634886b0c7c43395a264d085450d009eb1154b5f38a8bae49d469fdcbc61
+  checksum: 10/6cbcfe943a84089f420a900a3a3aeb54ee94dcc9c2b81b150434896357be5d1079eff0b1bbb628597371e79f896b1bc5776df04184756ba99656ff31df9a75bf
   languageName: node
   linkType: hard
 
@@ -5995,8 +5995,8 @@ __metadata:
   linkType: hard
 
 "framer-motion@npm:^11.2.11":
-  version: 11.3.29
-  resolution: "framer-motion@npm:11.3.29"
+  version: 11.3.30
+  resolution: "framer-motion@npm:11.3.30"
   dependencies:
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -6010,7 +6010,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10/2380ea8fe275cdcc6366709a9762d5ed0b45a672d683305ab5fe17f5dc0aa1082a237556c11c89da69c305fac90c3cebee270cc4d0c5d85abce35aabfd09d0c7
+  checksum: 10/3cb710ae8a6e54538bc7cae1ecc852487867341c5d9156d7c3a9793af7ef3d3d466babce6c70cf0ef58ff996f6ce5c35510e9af834b0064467b6a8fc523eaefa
   languageName: node
   linkType: hard
 
@@ -7632,12 +7632,12 @@ __metadata:
   linkType: hard
 
 "micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
-  version: 4.0.7
-  resolution: "micromatch@npm:4.0.7"
+  version: 4.0.8
+  resolution: "micromatch@npm:4.0.8"
   dependencies:
     braces: "npm:^3.0.3"
     picomatch: "npm:^2.3.1"
-  checksum: 10/a11ed1cb67dcbbe9a5fc02c4062cf8bb0157d73bf86956003af8dcfdf9b287f9e15ec0f6d6925ff6b8b5b496202335e497b01de4d95ef6cf06411bc5e5c474a0
+  checksum: 10/6bf2a01672e7965eb9941d1f02044fad2bd12486b5553dc1116ff24c09a8723157601dc992e74c911d896175918448762df3b3fd0a6b61037dd1a9766ddfbf58
   languageName: node
   linkType: hard
 
@@ -10136,10 +10136,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.1, tslib@npm:^2.6.2, tslib@npm:^2.6.3, tslib@npm:~2.6.0":
-  version: 2.6.3
-  resolution: "tslib@npm:2.6.3"
-  checksum: 10/52109bb681f8133a2e58142f11a50e05476de4f075ca906d13b596ae5f7f12d30c482feb0bff167ae01cfc84c5803e575a307d47938999246f5a49d174fc558c
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.1, tslib@npm:^2.6.2, tslib@npm:^2.6.3":
+  version: 2.7.0
+  resolution: "tslib@npm:2.7.0"
+  checksum: 10/9a5b47ddac65874fa011c20ff76db69f97cf90c78cff5934799ab8894a5342db2d17b4e7613a087046bc1d133d21547ddff87ac558abeec31ffa929c88b7fce6
   languageName: node
   linkType: hard
 
@@ -10147,6 +10147,13 @@ __metadata:
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 10/e14311d5392ec0e3519feb9afdb54483d7f3aa2d3def6f1a1a30bd3deca5dfeadd106e80bee9ba880bce86a2e50854c9fe5958572cd188d7ac6f8625101a6a8f
+  languageName: node
+  linkType: hard
+
+"tslib@npm:~2.6.0":
+  version: 2.6.3
+  resolution: "tslib@npm:2.6.3"
+  checksum: 10/52109bb681f8133a2e58142f11a50e05476de4f075ca906d13b596ae5f7f12d30c482feb0bff167ae01cfc84c5803e575a307d47938999246f5a49d174fc558c
   languageName: node
   linkType: hard
 

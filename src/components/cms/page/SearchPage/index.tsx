@@ -1,4 +1,4 @@
-
+// SearchPage component
 import { OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
 import { SearchPageDataFragment, SearchPageDataFragmentDoc } from "@/gql/graphql";
 import SearchContainer from '@/components/SearchContainer';

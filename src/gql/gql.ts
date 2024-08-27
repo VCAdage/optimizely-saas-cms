@@ -42,6 +42,7 @@ const documents = {
     "query searchArticles($pageSize: Int, $skip: Int, $searchTerm: String) {\n  ArticlePage(\n    limit: $pageSize\n    skip: $skip\n    where: {_fulltext: {match: $searchTerm}}\n    orderBy: {_ranking: SEMANTIC}\n  ) {\n    total\n    items {\n      ...IContentData\n      _metadata {\n        published\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n      articleTitle\n      articleSummary {\n        html\n      }\n      articleBody {\n        html\n      }\n    }\n  }\n}": types.searchArticlesDocument,
     "fragment ButtonBlockData on ButtonBlock {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockDataFragmentDoc,
     "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockPropertyDataFragmentDoc,
+    "fragment AlertElementData on AlertElement {\n  AlertDescription\n  AlertTitle\n}": types.AlertElementDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  text: Text\n  link: Link {\n    ...LinkData\n  }\n}": types.CTAElementDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": types.ImageElementDataFragmentDoc,
@@ -184,6 +185,10 @@ export function gql(source: "fragment ButtonBlockData on ButtonBlock {\n  text\n
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"): (typeof documents)["fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment AlertElementData on AlertElement {\n  AlertDescription\n  AlertTitle\n}"): (typeof documents)["fragment AlertElementData on AlertElement {\n  AlertDescription\n  AlertTitle\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

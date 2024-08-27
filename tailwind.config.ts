@@ -8,7 +8,18 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      'white': '#ffffff',
+      "adage-paletteadage-black": "var(--adage-paletteadage-black)",
+      "adage-paletteadage-light-blue-1": "var(--adage-paletteadage-light-blue-1)",
+      "adage-paletteadage-light-grey": "var(--adage-paletteadage-light-grey)",
+      "alert-palettealert-caution": "var(--alert-palettealert-caution)",
+      "alert-palettealert-general": "var(--alert-palettealert-general)",
+      "alert-palettealert-good": "var(--alert-palettealert-good)",
+      "alert-palettealert-negative": "var(--alert-palettealert-negative)",
+      black: "var(--black)",
+      "ui-palettebackground": "var(--ui-palettebackground)",
+      "ui-paletteicon": "var(--ui-paletteicon)",
+      "ui-palettetext-primary": "var(--ui-palettetext-primary)",
+      white: "var(--white)",
       'ghost-white': '#F8F8FC',
       'light-grey': '#D9D9D9',
       'azure': '#007EFC',
@@ -24,6 +35,11 @@ const config: Config = {
       'currentColor': 'currentColor',
       'transparent': 'transparent',
       'inherit': 'inherit'
+    },
+    fontFamily: {
+      "cta-desktop": "var(--cta-desktop-font-family)",
+      "h6-desktop": "var(--h6-desktop-font-family)",
+      "p-small-desktop": "var(--p-small-desktop-font-family)",
     },
     extend: {
       typography: {
