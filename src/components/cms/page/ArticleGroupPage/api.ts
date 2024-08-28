@@ -9,6 +9,7 @@ export type ArticleListItem = {
     title: string
     image?: ReferenceDataFragment
     intro?: NodeInput
+    body?: NodeInput
     published: Date
 }
 
