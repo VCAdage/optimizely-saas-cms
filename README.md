@@ -1,4 +1,21 @@
-This is a minimal Visual Builder demo site
+# Anima-Optimizely Next.js Project
+## Project Overview
+This project leverages Anima, a Figma plugin, to generate Next.js components that are used within an Optimizely CMS environment. The project is designed to create dynamic and efficient web components, enhanced with modern capabilities such as feature experimentation and AI-powered search.
+
+Key Features
+1. Figma to Optimizely Next.js Components
+We use Anima to streamline the process of converting Figma designs into Optimizely-compatible Next.js components. This enables quick iteration and seamless integration of designs into the web application.
+
+2. Feature Experimentation
+The project integrates Optimizely's Feature Experimentation functionality, allowing developers to test different variations of content and features. This helps optimize user experiences by deploying and analyzing A/B tests and other experiments.
+
+3. AI-Powered Search
+Our AI-powered search leverages OpenAI and GraphQL to enhance user experience with advanced search capabilities. It generates search results based on user queries and provides AI-based summaries of the results. This feature allows users to find relevant content faster and more efficiently.
+
+4. Automated Deployment with Vercel
+This project is connected to Vercel for seamless and automated deployment. Vercel ensures continuous deployment and a smooth development workflow. The live application is deployed at:
+
+[Optimizely SaaS CMS](https://optimizely-saas-cms-plum.vercel.app/en)
 
 ## Getting Started
 
