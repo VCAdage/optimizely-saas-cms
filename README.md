@@ -1,4 +1,4 @@
-# Anima-Optimizely Next.js Project
+# Fast-Fig - Optimizely Next.js Project
 ## Project Overview
 This project leverages Anima, a Figma plugin, to generate Next.js components that are used within an Optimizely CMS environment. The project is designed to create dynamic and efficient web components, enhanced with modern capabilities such as feature experimentation and AI-powered search.
 
